@@ -37,13 +37,7 @@ class _DoubleLinkedBase:
           
     def _insert_between(self, e, predecessor, successor):
         """Add element e between two existing nodes and return new node"""
-        newest = self._Node(e, predecessor, successor)
-        predecessor._next = newest
-        newest._prev = predecessor
-        successor._prev = newest
-        newest._next = successor
-        self.size = self.size+1
-        return newest
+       
 
     def _delete_node(self, node):
         """Delete nonsentinel node from the list and return its elements"""
