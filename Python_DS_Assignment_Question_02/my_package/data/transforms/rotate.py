@@ -11,12 +11,13 @@ class RotateImage(object):
             Arguments:
             degrees: rotation degree.
         '''
-
+        self.angle = degrees
+        
     def __call__(self, sample):
         '''
             Arguments:
             image (numpy array or PIL image)
-
             Returns:
             image (numpy array or PIL image)
         '''
+        return sample.rotate(self.angle,expand=True)

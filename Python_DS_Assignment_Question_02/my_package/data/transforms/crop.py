@@ -13,14 +13,16 @@ class CropImage(object):
             shape: output shape of the crop (h, w)
             crop_type: center crop or random crop. Default: center
         '''
+        self.shape = shape
+        self.crop_type = crop_type
 
     def __call__(self, image):
         '''
             Arguments:
             image (numpy array or PIL image)
-
             Returns:
             image (numpy array or PIL image)
         '''
+        return image.crop(box = self.shape)
 
  

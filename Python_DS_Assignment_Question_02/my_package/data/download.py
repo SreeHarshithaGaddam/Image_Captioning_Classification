@@ -13,3 +13,6 @@ class Download(object):
             path: download path with the file name
             url: required image URL
         '''
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
+        img.save(path)
